@@ -115,27 +115,6 @@ $results=db_query("SELECT * FROM {adfero}");
 $header=array(t('ID'),t('Firstname'), t('Lastname'), t('Phone Number'), t('Email Address'));
 $rows=array();
 
-
-foreach($results AS $result){
-$rows[]=array(
-	check_plain($result->adferoid),
-	check_plain($result->firstname),
-	check_markup($result->lastname),
-	check_markup($result->phone),
-	check_markup($result->email),
-
-);
-
-
-}
-
-
-return theme ('table',array('header'=>$header,'rows'=>$rows));    
-	 
-
-}
-
-
 /*
 displaying the results as a list
 */
@@ -149,7 +128,30 @@ displaying the results as a list
 			
 					echo "<li>". "<b>Name:</b> ". $record["firstname"]. " ". $record["lastname"]. "<br><b> Phone:</b>  ". $record["phone"]. "<br><b>Email:</b>   ".$record["email"]."</li>";
 				 }
-				 echo '</ol>';
+				 echo '</ol>';	 
+
+				 
+foreach($results AS $result){
+$rows[]=array(
+	check_plain($result->adferoid),
+	check_plain($result->firstname),
+	check_markup($result->lastname),
+	check_markup($result->phone),
+	check_markup($result->email),
+
+);
+
+
+
+}
+
+
+return theme ('table',array('header'=>$header,'rows'=>$rows));    
+
+}
+
+
+
 
 
 ?>
