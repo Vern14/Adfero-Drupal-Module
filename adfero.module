@@ -135,4 +135,21 @@ return theme ('table',array('header'=>$header,'rows'=>$rows));
 
 }
 
+
+/*
+displaying the results as a list
+*/
+		// Create connection
+		$myconnection = new mysqli("localhost", "root", "", "justdrupal");
+		// Retrieve information from the database
+		$myinformation = $myconnection->query("SELECT * FROM adfero");
+				 echo '<ol>';
+				 // output data of each record
+				 while($record = $myinformation->fetch_assoc()) {			
+			
+					echo "<li>". $record["adferoid"]. $record["firstname"]. $record["lastname"]. $record["phone"].$record["email"]."</li>";
+				 }
+				 echo '</ol>';
+
+
 ?>
