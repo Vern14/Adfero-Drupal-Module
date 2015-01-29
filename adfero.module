@@ -147,7 +147,7 @@ displaying the results as a list
 				 // output data of each record
 				 while($record = $myinformation->fetch_assoc()) {			
 			
-					echo "<li>". $record["adferoid"]. $record["firstname"]. $record["lastname"]. $record["phone"].$record["email"]."</li>";
+					echo "<li>". "<b>Name:</b> ". $record["firstname"]. " ". $record["lastname"]. "<br><b> Phone:</b>  ". $record["phone"]. "<br><b>Email:</b>   ".$record["email"]."</li>";
 				 }
 				 echo '</ol>';
 
