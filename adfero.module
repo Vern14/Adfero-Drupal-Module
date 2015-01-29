@@ -53,9 +53,7 @@ function adfero_form($form,&$form_state){
 
 $form['firstname']=array(
 	'#type'=>'textfield',
-	'#title'=>t('Firstname'),
-	'#size'=>60,
-	'#maxlength'=>128,
+	'#title'=>t('Firstname'),	
 	'#required'=>TRUE,
 	'#description'=>t('Please enter your firstname'),
 );
